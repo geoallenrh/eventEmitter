@@ -29,7 +29,7 @@ def generate_event():
         "faultCode": {
         'id': str(random.randint(100000000, 9999999999)),
         'faultId': FAULT_CODES[random.randint(0, 4)],
-        'ecuId': FAULT_CODES[random.randint(0, 2)],
+        'ecuId': EQUIP_IDS[random.randint(0, 2)],
         'timestamp': "2020-06-22T17:26:14.000Z",
         }
     }
