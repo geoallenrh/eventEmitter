@@ -10,8 +10,7 @@ import datetime
 from kafka import KafkaProducer
 
 FAULT_CODES = [
-
-        138,
+         138,
         287,
         217,
         444,
@@ -24,14 +23,14 @@ EQUIP_IDS = [
     83, 
 ]
 
+
 def generate_event():
     ret = {
-        "faultCode": {
         'id': str(random.randint(100000000, 9999999999)),
         'faultId': FAULT_CODES[random.randint(0, 4)],
         'ecuId': EQUIP_IDS[random.randint(0, 2)],
         'timestamp': "2020-06-22T17:26:14.000Z",
-        }
+        'damage' : false
     }
     return ret
 
