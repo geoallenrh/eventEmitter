@@ -9,33 +9,29 @@ import datetime
 
 from kafka import KafkaProducer
 
-CREDIT_CARD_NUMBER = [
+FAULT_CODES = [
 
-        12345,
-        73628,
-        23455,
-        54322,
-        24555
-
+        138,
+        287,
+        217,
+        444,
+        911,
 ]
 
-TERMINAL = [
-    { "id": "1", "countryCode": "US"},
-    { "id": "2", "countryCode": "UK"},
-    { "id": "3", "countryCode": "UK"},
-    { "id": "4", "countryCode": "UK"}
-
+EQUIP_IDS = [
+    81,
+    82,
+    83, 
 ]
-
 
 def generate_event():
     ret = {
-        'transactionNumber': str(random.randint(100000000, 9999999999)),
-        'creditCardNumber': CREDIT_CARD_NUMBER[random.randint(0, 3)],
-        'amount': str(random.randint(1000, 9999)),
-        'timestamp': "1530264660000",
-        'terminal': TERMINAL[random.randint(0, 3)]
-
+        "faultCode": {
+        'id': str(random.randint(100000000, 9999999999)),
+        'faultId': FAULT_CODES[random.randint(0, 5)],
+        'ecuId': FAULT_CODES[random.randint(0, 3)],
+        'timestamp': "2020-06-22T17:26:14.000Z",
+        }
     }
     return ret
 
